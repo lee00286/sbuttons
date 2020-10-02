@@ -27,6 +27,11 @@ $(document).ready(function () {
       classes: "",
       children: [
         {
+          type: "bounce",
+          label: "Bounce",
+          classes: "bouncy-btn",
+        },
+        {
           type: "click",
           label: "Click",
           classes: "click-btn",
@@ -87,6 +92,11 @@ $(document).ready(function () {
           classes: "pulse-btn",
         },
         {
+          type: "snake",
+          label: "Snake Border",
+          classes: "snake-btn",
+        },
+        {
           type: "ripple",
           label: "Ripple",
           classes: "ripple-btn",
@@ -119,8 +129,14 @@ $(document).ready(function () {
       ],
     },
     {
+      type: "dashed",
+      label: "Dashed Buttons",
+      classes: "dashed-btn",
+      children: [],
+    },
+    {
       type: "disable",
-      classes: "btn-disabled",
+      classes: "disabled-btn",
       label: "Disabled Buttons",
     },
     {
@@ -148,6 +164,12 @@ $(document).ready(function () {
           text: "Buy me coffee",
         },
         {
+          type: "chat",
+          label: "Chat Box Button",
+          classes: "chat-btn",
+          text: "",
+        },
+        {
           type: "download",
           label: "Download Button",
           classes: "download-btn",
@@ -169,6 +191,12 @@ $(document).ready(function () {
           type: "plus",
           label: "Plus Button",
           classes: "plus-btn",
+          text: "",
+        },
+        {
+          type: "scroll-to-top",
+          label: "Scroll-to-Top Button",
+          classes: "scroll-to-top-btn",
           text: "",
         },
       ],
@@ -193,6 +221,10 @@ $(document).ready(function () {
           text: "Login with Facebook",
         },
         {
+          classes: "flickr",
+          text: "Login with Flickr",
+        },
+        {
           classes: "github",
           text: "Login with Github",
         },
@@ -209,8 +241,16 @@ $(document).ready(function () {
           text: "Login with LinkedIn",
         },
         {
+          classes: "snapchat",
+          text: "Login with Snapchat",
+        },
+        {
           classes: "twitter",
           text: "Login with Twitter",
+        },
+        {
+          classes: "tumblr",
+          text: "Login with Tumblr",
         },
         {
           classes: "weibo",
@@ -218,6 +258,38 @@ $(document).ready(function () {
         },
       ],
       children: [],
+    },
+    {
+      type: "special",
+      label: "Special Buttons",
+      classes: "",
+      children: [
+        {
+          type: "play-game",
+          label: "Play game Button",
+          classes: "play-game-btn",
+          text: "",
+        },
+        {
+          type: "retro",
+          label: "Retro",
+          classes: "retro-btn",
+          variations: [
+            {
+              classes: "",
+              text: "Continue",
+            },
+            {
+              classes: "retro-btn-proceed",
+              text: "Proceed",
+            },
+            {
+              classes: "retro-btn-reset",
+              text: "Reset",
+            },
+          ],
+        },
+      ],
     },
   ];
 
@@ -354,9 +426,9 @@ $(document).ready(function () {
     }
     return section;
   }
-
   for (var i = 0; i < buttons.length; i++) {
     var section = createSection(buttons[i], true);
-    section.appendTo(content).before('<hr class="secondary-hr">');
+    section.appendTo(content);
   }
+  $("#loading_wheel").remove();
 });
